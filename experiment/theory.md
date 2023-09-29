@@ -5,531 +5,58 @@
 
 This experiment enables a student to learn
 
-- How to realize functionality of a 3-to-8 line active low Decoder viz. 74138 IC. That is on setting the two active low and one active high enable inputs to proper level, one can verify that one and only one of the eight active low outputs is asserted based on the values assigned to three select input.
-- How to cascade two 74138 IC's to implement a 4-to-6 active low decoder.
+-How to view the real life analog signal with an oscilloscope.
+-How to set the amplitude, frequency and phase of the signal source.
+-How to set the sampling frequency of the source such that the signal is exactly reconstructed from its samples.
+The principal objective of this experiment is to understand the principle of sampling of continuous time analog signal.
 
 
 ## Theory
 
-#### Part1
                         
-IC 74138 works as a 3-to-8 active low decoder,based on the values assigned to three select inputs of the three enable inputs, G1 must be made high value while <font style="text-decoration:overline">G</font>2A and <font style="text-decoration:overline">G</font>2B must be low. The eight active low inputs (<font style="text-decoration:overline">Y</font>0 to <font style="text-decoration:overline">Y</font>7) correspond to eight maxterms (M0 to M7) or in other words, component of the corresponding minterms m0-m7. For example, <font style="text-decoration:overline">Y0</font> = component of <font style="text-decoration:overline">C</font>&nbsp;<font style="text-decoration:overline">B</font>&nbsp;<font style="text-decoration:overline">A</font> = C+B+A. <br />
+The real life signals that we encounter in our day to day basis are mostly analog signals. These signals are defined continuously in time and have infinite range of amplitude values. In order to process these signals to obtain meaningful information, they need to be converted to a format which is easily handled by computing resources like microprocessors, computers etc... The first step in this process is to convert the real-time signal into discrete-time signals. Discrete-time signals are defined only at a particular set of time instances. They can thus be represented as sequence of numbers with continuous range of values.
+
+The process of converting an analog signal (denoted as x(t)) to a digital signal (denoted as x(n)) is called the analog-to-digital conversion (referred to as digitization), usually performed by an analog-to-digital converter (ADC). Here t is the continuous time variable and n is the sequence order. In many applications after the processing of the digital signal is performed, x(n) needs to be converted back to analog signal x(t) before it is applied to appropriate analog device. This reverse process is called digital-to-analog conversion and is typically performed using a digital-to-analog converter (DAC).
+
+The typical block diagram of an ADC is shown in Fig. 1 below. <br />
                             <div align="center">
                             <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
                             <br />
                             Figure 1 (IC 74138)</div>
  
 
- 
- $$ \\overline { G2A } $$ |$$ \\overline { G2B } $$ | G1  |  C |  B |  A | $$ \\overline{ Y0 } $$  | $$ \\overline{ Y1 } $$   | $$ \\overline{ Y2 } $$   | $$ \\overline{ Y3 } $$  | $$ \\overline{ Y4 } $$  | $$ \\overline{ Y5 } $$  | $$ \\overline{ Y6 } $$  |$$ \\overline{ Y7 }$$ |
-:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
- L | L  |H|0|0|0|0|1|1|1|1|1|1|1|
- L | L  |H|0|0|1|1|0|1|1|1|1|1|1|
- L | L  |H|0|1|0|1|1|0|1|1|1|1|1|
- L | L  |H|0|1|1|1|1|1|0|1|1|1|1|
- L | L  |H|1|0|0|1|1|1|1|0|1|1|1|
- L | L  |H|1|0|1|1|1|1|1|1|0|1|1|
- L | L  |H|1|1|0|1|1|1|1|1|1|0|1|
- L | L  |H|1|1|1|1|1|1|1|1|1|1|0|
+The process of digitization consists of first sampling (digitization in time) and quantization (digitization in amplitude). In this experiment we will study and understand the principle of sampling, while the principle of quantization will be studied in the next experiment. The sampling process depicts an analog signal as a sequence of values. The basic sampling function can be carried out with an ideal 'sample-and-hold' circuit which maintains the sampled signal until next sample is taken. An ideal sampler can be considered as a switch that periodically opens and closes every T seconds. The sampling frequency (fs in Hertz) is thus defined as
 
-Figure 2 Truth table for 3 to 8 decoder
-                            
-                             
-  #### Part2
-                             
- Cascading two 74138 IC(Two 3 to 8 active low decoder) we can achieve a 4 to 16 active low decoder.
-                              
-  <font style="text-decoration:overline">G2A</font> and <font style="text-decoration:overline">G2B</font> inputs of the first IC(74138) and G1 input of 2nd IC(74138) are shorted and it acts as MSB of 4 binary select input .
-                              <font style="text-decoration:overline">G2A</font> &amp;<font style="text-decoration:overline">G2B</font> of second IC(74138) is kept low.G1 of 1st IC is kept always high.</p>
-                           
-
-                             
- <img src="images/dual-74138.JPG" style="width:700px;height:600px;"/> 
-                             
-<p>Figure 3: 4 to 16 decoder  cascadeding two 3 to 8 decoder
-                             </p>
-                          <table width="80%"  border="0" cellspacing="1px" cellpadding="2" bgcolor="#999999">
-                             
-<tr bgcolor="#FFFFCC">
-                             <td colspan="4" width="30%">Select Inputs</font></td>
-                             <td colspan="8">1st Decoder</font></td>
-                             <td colspan="8">2nd Decoder</font></td>
-                             </tr>
-                             <tr bgcolor="#FFFFCC">
-                             <td width="20%">D</td>
-                             <td width="20%">C</td>
-                             <td width="20%">B</td>
-                             <td width="20%">A</td>
-                             <td><font style="text-decoration:overline">Y0</font></td>
-                             <td><font style="text-decoration:overline">Y1</font></td>
-                             <td><font style="text-decoration:overline">Y2</font></td>
-                             <td><font style="text-decoration:overline">Y3</font></td>
-                             <td><font style="text-decoration:overline">Y4</font></td>
-                             <td><font style="text-decoration:overline">Y5</font></td>
-                             <td><font style="text-decoration:overline">Y6</font></td>
-                             <td><font style="text-decoration:overline">Y7</font></td>
-                             <td><font style="text-decoration:overline">Y0</font></td>
-                             <td><font style="text-decoration:overline">Y1</font></td>
-                             <td><font style="text-decoration:overline">Y2</font></td>
-                             <td><font style="text-decoration:overline">Y3</font></td>
-                             <td><font style="text-decoration:overline">Y4</font></td>
-                             <td><font style="text-decoration:overline">Y5</font></td>
-                             <td><font style="text-decoration:overline">Y6</font></td>
-                             <td><font style="text-decoration:overline">Y7</font></td>
-                             
-                            
-  </tr>
-                                
-                                
- <tr bgcolor="#FFFFCC">
-                             <td >0</td>
-                             <td>0</td>
-                             <td >0</td>
-                             <td>0</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
- </tr>
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>0</td>
-                             <td >0</td>
-                             <td >0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
- </tr>
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>0</td>
-                             <td >0</td>
-                             <td >1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
- </tr>
-                             
-<tr bgcolor="#FFFFCC">
-                             <td>0</td>
-                             <td >0</td>
-                             <td >1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
-  </tr>
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>0</td>
-                             <td >1</td>
-                             <td >0</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
- </tr>
-                             
-                             
-<tr bgcolor="#FFFFCC">
-                             <td>0</td>
-                             <td >1</td>
-                             <td >0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
- </tr>
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>0</td>
-                             <td >1</td>
-                             <td >1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
- </tr>
-                             
-<tr bgcolor="#FFFFCC">
-                             <td>0</td>
-                             <td >1</td>
-                             <td >1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
-</tr>
-                             
-                             
-                             
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >0</td>
-                             <td >0</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
- </tr>
-                             
-                             
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >0</td>
-                             <td >0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
-</tr>
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >0</td>
-                             <td >1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
-  </tr>
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >0</td>
-                             <td >1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
- </tr>
-                             
-                             
-                             
-<tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >1</td>
-                             <td >0</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-                             
- </tr>
-                             
-                             
-                             
-<tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >1</td>
-                             <td >0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             
-</tr>
-                             
-                             
- <tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >1</td>
-                             <td >1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             <td>1</td>
-                             
-                             
- </tr>
-                             
-                             
-  <tr bgcolor="#FFFFCC">
-                             <td>1</td>
-                             <td >1</td>
-                             <td >1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>1</td>
-                             <td>0</td>
-                             
-                             
- </tr>
-                             
-                             
-                             
-                             
-                             
- </table>
-                             
- <br />
-                              <p>Figure 4&nbsp;: Truth table for 4 to 16 decoder</p>
-                              
-                              
-                              
-                             
-                             
-#### Part 3
-
-A decoder with active high outputs generates minterms. Whereas, a decoder with active low outputs generates maxterms (i.e.  complements of
-the corresponding minterm).
-Thus, if a function is specified as a sum of minterms or equivalently as a product of maxterms, 
-it can be realized by a decoder with active low outputs and additional AND/NAND gates. 
-
-
-For example, consider the following
-<br />
-
-F1 (A,B,C) = &Sigma; m (1,2)
-<br />
-
-F2 (A,B,C) = &Sigma; m (0,1,2,3,4,5)
-
-<br />
+fs=1T....(1)
+The sampled discrete time signal x(nT) , n=0,1,2,.... of the original continuous time signal x(t) is shown in Fig. 2 below.<br/>
 
 <div align="center">
+                            <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
+                            <br />
+                            Figure 2 (IC 74138)</div>
+                            
+In order to represent an analog signal x(t) by a discrete-time signal x(nT) accurately, so that the analog signal can be exactly reconstructed back from the discrete-time signal, the sampling frequency fs must be at least twice the maximum frequency component (fM) of the original analog signal. Thus we have,
 
-<img src="images/decoder-syn.JPG" style="width:400px;height:300px;"/>
+fs≥2fm....(2)
+The minimum sampling rate is called the Nyquist rate and the above Sampling Theorem is called the Shannon's Sampling Theorem. When an analog signal is sampled at fs , frequency components higher than fs/2 fold back into the frequency range [0, fs/2]. This folded frequency components overlap with the original frequency components in the same range and leads to an undesired effect known as aliasing. In this case, the original analog signal cannot be recovered from the sample data.
+
+Consider an analog signal of frequency 1Hz as shown in Fig. 3(a) below. The sampling frequency is 4Hz. The sampled signal is shown in Fig. 3(b), Note that an exact reconstruction of the missing samples is obtained so long as the Shannon's Sampling Theorem is satisfied. <br />
+
+<div align="center">
+                            <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
+                            <br />
+                            Figure 3 (IC 74138)</div>
+
+
+Now let's consider, the analog signal of frequency 5Hz as shown in Fig. 4(a) below. The sampling frequency is same as above, i.e. 4Hz. The sampled signal is shown in Fig. 4(b), Note that the reconstruction of the original analog signal is not possible since the sampling frequency does not satisfy Shannon's Sampling Theorem. In this case the reconstructed signal has a frequency of 1Hz. The signal of 5Hz is folded back as 1Hz, into the range determined by the sampling frequency leading to the problem of aliasing. <br/>
+
+
+<div align="center">
+                            <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
+                            <br />
+                            Figure 4 (IC 74138)</div>
+
+
      
 </div>                           
 

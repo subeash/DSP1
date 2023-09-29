@@ -1,1 +1,1 @@
-## Analysis and Synthesis of Logic Functions using Decoders &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="images/iitkgp.png" width="3%" />
+## Study of sampling theorem, effect of undersampling &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="images/iitkgp.png" width="3%" />
