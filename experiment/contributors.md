@@ -1,21 +1,21 @@
 
 
 #### Subject Matter Experts
-<b>Name of Subject Matter Experts | <b> **Prof. Gautam Saha**
+<b>Name  | <b> **Prof. Gautam Saha**
 :--|:--|
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **gsaha @ ece.iitkgp.ac.in**
 <b> Department |  **Electronics & Electrical Communication Engineering**
 <b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-gsaha
 
-<b>Name of Subject Matter Experts | <b> **Prof. Arijit De**
+<b>Name  | <b> **Prof. Arijit De**
 :--|:--|
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **rijit@ece.iitkgp.ernet.in**
 <b> Department |  **Electronics & Electrical Communication Engineering**
 <b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-arijit
 
-<b>Name of Subject Matter Experts | <b> **Prof. Shailendra Kumar Varshney**
+<b>Name  | <b> **Prof. Shailendra Kumar Varshney**
 :--|:--|
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **skvarshney@ece.iitkgp.ernet.in**
