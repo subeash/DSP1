@@ -19,21 +19,21 @@
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **gsaha @ ece.iitkgp.ac.in**
 <b> Department |  **Electronics & Electrical Communication Engineering**
-<b>Webpage| <b> [Web:https://www.iitkgp.ac.in/department/EC/faculty/ec-gsaha]
+<b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-gsaha
 
 <b>Name of Developer | <b> **Prof. Arijit De**
 :--|:--|
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **rijit@ece.iitkgp.ernet.in**
 <b> Department |  **Electronics & Electrical Communication Engineering**
-<b>Webpage| <b> [Web:https://www.iitkgp.ac.in/department/EC/faculty/ec-arijit]
+<b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-arijit
 
 <b>Name of Developer | <b> **Prof. Shailendra Kumar Varshney**
 :--|:--|
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **skvarshney@ece.iitkgp.ernet.in**
 <b> Department |  **Electronics & Electrical Communication Engineering**
-<b>Webpage| <b> [Web:https://www.iitkgp.ac.in/department/EC/faculty/ec-skvarshney]
+<b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-skvarshney
 
 
 ### Contributors List
