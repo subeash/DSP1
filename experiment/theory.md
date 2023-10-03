@@ -20,7 +20,7 @@ The process of converting an analog signal (denoted as x(t)) to a digital signal
 
 The typical block diagram of an ADC is shown in Fig. 1 below. <br />
                             <div align="center">
-                            <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
+                            <img src="images/exp1.jpg" style="width:500px;height:400px;" /> 
                             <br />
                             Figure 1 (IC 74138)</div>
  
@@ -31,7 +31,7 @@ fs=1T....(1)
 The sampled discrete time signal x(nT) , n=0,1,2,.... of the original continuous time signal x(t) is shown in Fig. 2 below.<br/>
 
 <div align="center">
-                            <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
+                            <img src="images/expt1Fig2.png" style="width:500px;height:400px;" /> 
                             <br />
                             Figure 2 (IC 74138)</div>
                             
@@ -43,7 +43,7 @@ The minimum sampling rate is called the Nyquist rate and the above Sampling Theo
 Consider an analog signal of frequency 1Hz as shown in Fig. 3(a) below. The sampling frequency is 4Hz. The sampled signal is shown in Fig. 3(b), Note that an exact reconstruction of the missing samples is obtained so long as the Shannon's Sampling Theorem is satisfied. <br />
 
 <div align="center">
-                            <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
+                            <img src="images/abc1.jpg" style="width:500px;height:400px;" /> 
                             <br />
                             Figure 3 (IC 74138)</div>
 
@@ -52,7 +52,7 @@ Now let's consider, the analog signal of frequency 5Hz as shown in Fig. 4(a) bel
 
 
 <div align="center">
-                            <img src="images/74138.jpg" style="width:500px;height:400px;" /> 
+                            <img src="images/abc2.png" style="width:500px;height:400px;" /> 
                             <br />
                             Figure 4 (IC 74138)</div>
 
